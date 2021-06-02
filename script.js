@@ -40,6 +40,8 @@ function loadLocalStorage() {
     document.getElementById("background").style.backgroundColor = "#" + LargeTextBackground;
     document.getElementById("marqueeTag").scrollAmount = LargeTextSpeed;
     document.getElementById("marquee").style.fontSize = LargeTextSize + "px";
+
+    document.getElementById("marqueeTag").start();
 }
 
 function back() {
@@ -48,17 +50,17 @@ function back() {
 
 let deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-});
+// window.addEventListener('beforeinstallprompt', (e) => {
+//   // Stash the event so it can be triggered later.
+//   deferredPrompt = e;
+// });
 
-if('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/LargeTextDisplayer/sw.js', { scope: '/' })
-      .then(function(registration) {
-            console.log('Service Worker Registered');
-      });
-    navigator.serviceWorker.ready.then(function(registration) {
-       console.log('Service Worker Ready');
-    });
-}
+// if('serviceWorker' in navigator) {
+//     navigator.serviceWorker.register('/LargeTextDisplayer/sw.js', { scope: '/' })
+//       .then(function(registration) {
+//             console.log('Service Worker Registered');
+//       });
+//     navigator.serviceWorker.ready.then(function(registration) {
+//        console.log('Service Worker Ready');
+//     });
+// }
