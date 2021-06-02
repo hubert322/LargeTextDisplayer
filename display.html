@@ -1,32 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="script.js"></script>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-        <title>Large Text Displayer</title>
-        <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display|Lato|Montserrat|Overpass|Pacifico|Roboto&display=swap" rel="stylesheet">
-        <link rel="apple-touch-icon" sizes="180x180" href="branding/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="branding/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="branding/android-chrome-192x192.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="branding/favicon-16x16.png">
-        <link rel="manifest" href="branding/site.webmanifest">
-        <link rel="mask-icon" href="branding/safari-pinned-tab.svg" color="#cbd100">
-        <link rel="shortcut icon" href="branding/favicon.ico">
-        <meta name="msapplication-TileColor" content="#ffc40d">
-        <meta name="msapplication-TileImage" content="branding/mstile-144x144.png">
-        <meta name="msapplication-config" content="branding/browserconfig.xml">
-        <meta name="theme-color" content="#ffff00">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-        <script>
-            function getURLParameter(name) {
+
+<head>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <title>Large Text Displayer</title>
+    <link
+        href="https://fonts.googleapis.com/css?family=DM+Serif+Display|Lato|Montserrat|Overpass|Pacifico|Roboto&display=swap"
+        rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="branding/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="branding/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="branding/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="branding/favicon-16x16.png">
+    <link rel="manifest" href="branding/site.webmanifest">
+    <link rel="mask-icon" href="branding/safari-pinned-tab.svg" color="#cbd100">
+    <link rel="shortcut icon" href="branding/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffc40d">
+    <meta name="msapplication-TileImage" content="branding/mstile-144x144.png">
+    <meta name="msapplication-config" content="branding/browserconfig.xml">
+    <meta name="theme-color" content="#ffff00">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <script>
+        function getURLParameter(name) {
             return decodeURIComponent((new RegExp("[?|&]" + name + "=" + "([^&;]+?)(&|#|;|$)").exec(location.search) || [null, ""])[1].replace(/\+/g, "%20")) || null;
-            }
-        </script>
-    </head>
-    <body onload="loadLocalStorage();" id="background">
-        <main class="display">
-            <div class="marqueeTag" id="marqueeTag"><p class="marquee" id="marquee">This doesn't seem to be working. Try Google Chrome.</p></div>
-        </main>
-    </body>
+        }
+    </script>
+</head>
+
+<body onload="setDisplay();" id="background">
+    <main class="display">
+        <div class="marqueeTag" id="marqueeTag">
+            <p class="marquee" id="marquee">This doesn't seem to be working. Try Google Chrome.</p>
+        </div>
+    </main>
+</body>
+
 </html>

@@ -14,12 +14,12 @@ const fontMap = {
     "timesNewRoman": "'Times New Roman', Times, serif"
 };
 
-function addCookie() {
+function openDisplay() {
     var url = "display.html?text=" + encodeURIComponent(document.getElementById("text").value) + "&foreground=" + encodeURIComponent(document.getElementById("foreground").value) + "&background=" + encodeURIComponent(document.getElementById("background").value) + "&speed=" + encodeURIComponent(document.getElementById("speedSlider").value) + "&size=" + encodeURIComponent(document.getElementById("sizeSlider").value) + "&font=" + encodeURIComponent(document.getElementById("font").value);
     window.open(url);
 }
 
-function loadLocalStorage() {
+function setDisplay() {
     var LargeTextText = getURLParameter("text");
     var LargeTextForeground = getURLParameter("foreground");
     var LargeTextBackground = getURLParameter("background");
@@ -43,25 +43,4 @@ function loadLocalStorage() {
     style.innerHTML = `.marqueeAnimation { animation: scroll-left ${LargeTextSpeed}s linear infinite; }`;
     document.getElementsByTagName("head")[0].appendChild(style);
     document.getElementById("marquee").classList.add("marqueeAnimation");
-}
-
-function back() {
-    window.close();
-}
-
-let deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Stash the event so it can be triggered later.
-  deferredPrompt = e;
-});
-
-if('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/LargeTextDisplayer/sw.js', { scope: '/' })
-      .then(function(registration) {
-            console.log('Service Worker Registered');
-      });
-    navigator.serviceWorker.ready.then(function(registration) {
-       console.log('Service Worker Ready');
-    });
 }
