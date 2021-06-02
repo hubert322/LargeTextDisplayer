@@ -5,10 +5,13 @@
 header {
     background-color: rgb(255, 255, 92);
     height: 50px;
+    color: black;
 }
 
 body {
     margin: 0;
+    background-color: black;
+    color: white;
 }
 
 .headerTitle {
@@ -27,14 +30,32 @@ body {
     text-align: center;
 }
 
-.marquee {
-    display: inline-block;
+.display {
+    height: 100vh;
+    overflow: hidden;
 }
 
-marquee {
+.marquee {
+    text-align: center;
+    white-space: nowrap;
+    margin: 0;
+    position: absolute;
+    top: 50vh;
+    transform: translateY(-50%);
+    padding-left: 100%;
+    will-change: transform;
+    animation: scroll-left 15s linear infinite;
+}
+
+@keyframes scroll-left {
+    0% { transform: translate(0, -50%); }
+    100% { transform: translate(-100%, -50%); }
+}
+
+.marqueeTag {
     top: 0;
     margin: 0;
-    display: inline-block;
+    position: relative;
 }
 
 .submit {
@@ -43,7 +64,7 @@ marquee {
     height: 30px;
 }
 
-input {
+input, textarea {
     border-top: 0;
     border-left: 0;
     border-right: 0;
